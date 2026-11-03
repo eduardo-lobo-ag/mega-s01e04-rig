@@ -7,7 +7,7 @@ type RunLine = { at: string; job: string; status: RunStatus; owner: string | nul
 const STATUSES: readonly string[] = ['ok', 'retry', 'fail'];
 const NIGHT = /^\d{4}-\d{2}-\d{2}$/;
 
-function parseLine(text: string): RunLine | null {
+export function parseLine(text: string): RunLine | null {
   let value: unknown;
   try {
     value = JSON.parse(text);
